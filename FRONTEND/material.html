@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Course materials</title>
+<link rel="stylesheet" href="Nav&Footer.css">
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color:white;
+  color: black;
+}
+
+.content {
+  text-align: left;
+  padding: 50px 20px;
+  align-content: center;
+}
+
+      /*image container*/
+.image-box {
+  display: flex;
+   justify-content: center;
+   gap: 30px;
+   margin-top: 20px;
+}
+
+.image-box div {
+   text-align: center;
+ }
+
+.image-box img {
+   width: 150px;
+   height: 150px;
+   border-radius: 10px;
+   transition: transform 0.3s;
+}
+          /*image hover effect*/
+.image-box img:hover {
+   transform: scale(1.1);
+}
+
+.image-box label {
+   display: block;
+   margin-top: 10px;
+   font-weight: bold;
+}
+
+        /* Dropdown styling */
+.dropdown-bar {
+   text-align: center;
+   margin-bottom: 20px;
+ }
+
+.dropdown {
+   display: inline-block;
+    position: relative;
+    align-content: center;
+}
+
+.dropbtn {
+   background-color: #131458dd;
+   color: white;
+   padding: 10px 15px;
+   border: 10px;
+   border-radius: 5px;
+   cursor: pointer;
+   font-size: 16px;
+  }
+
+.dropdown-content {
+   display: none;
+   position: absolute;
+   background-color: white;
+   min-width: 160px;
+   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+   border-radius: 5px;
+   z-index: 1;
+   text-align: left;
+  }
+
+.dropdown-content a {
+   color: black;
+   padding: 10px 15px;
+   display: block;
+   text-decoration: none;
+   transition: background-color 0.3s;
+        }
+
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+
+ .dropdown:hover .dropdown-content {
+    display: block;
+   }
+
+
+
+
+.faq-section {
+  padding: 40px 20px;
+  background:white;
+  color: #161515;
+}
+
+h2 {
+  text-align: left;
+  margin-bottom: 20px;
+  font-style: normal;
+  font-weight: normal;
+}
+h3{
+  text-align: center;
+  margin-bottom: 20px;
+
+}
+
+.faq-item {
+  margin: 15px auto;
+  width: 90%;
+  max-width: 800px;
+  border-bottom: 1px solid rgba(19, 18, 18, 0.677);
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  font-size: 18px;
+  cursor: pointer;
+  position: relative;
+  color: #060606;
+}
+   /*arrow effect*/
+.arrow {
+  width: 12px;
+  height: 12px;
+  border-left: 2px solid rgb(14, 14, 14);
+  border-bottom: 2px solid rgb(8, 8, 8);
+  transform: translate3d(-45);
+  transition: transform 0.3s ease;
+  margin-left: 10px;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  padding: 0 15px;
+}
+
+input[type="checkbox"]:checked ~ .faq-answer {
+  max-height: 100px;
+  padding: 10px 15px;
+}
+
+input[type="checkbox"]:checked + .faq-question .arrow {
+  transform: rotate(45deg);
+}
+
+.faq-answer p {
+  margin: 0;
+  color: rgba(10, 10, 10, 0.8);
+  font-size: 16px;
+}
+
+
+
+
+
+
+</style>
+
+</head>
+<body>
+
+
+   <!-- NAVIGATION PANEL-->
+   <header>
+    <nav style="display: flex;">
+        <div >
+            <img class="logo" src="images/Log.jpg" alt="logo">
+
+        </div>
+
+
+
+
+        <div style="display: flex;
+                    background-color: rgb(208, 204, 204);
+                     border-radius: 20px;
+                     flex-wrap: none;
+                     min-width: 600px;
+                     max-width: 1000px;">
+
+                <div>
+                    <ul >
+                        <li><a href="index.html"> Home</a></li>
+                        <li><a href="about.html"> About Us</a></li>
+                        <li><a href="study.html"> Study with Us</a></li>
+                        <li><a href="#material.html"> Course Material</a></li>
+                        <li><a href="contact.html"> Contact Us</a></li>
+                    </ul>
+
+                </div> 
+
+                <div style=" padding-top: 18px;"> 
+                  <button type="button"> <a href="login.html"> LOG IN</a> </button>
+                  <button type="button"> <a href="signup.html"> SIGN UP</a></button>
+
+              </div>
+        </div>
+    </nav>
+
+</header>
+<!--main content-->
+<main>
+  <div class="content">
+    <h1>Course materials</h1>
+    <P>Comprehensive course material that includes past tests, modules and past question papers.</P>
+
+    <img src="media/Pictures/picture1.png" alt="course material picture" width="100%" height="900px">
+    <h2>Our e-Learning platform is designed to provide an immersive and structured learning experience through a variety of high quality course materials. Our goal is to ensure that every learner, whether a beginner or an advanced professional has access to the best resources for mastering new stes of skills and achieving goals</h2>
+
+
+<section>
+  <!-- Dropdown -->
+  <div class="dropdown-bar">
+    <div class="dropdown">
+        <button class="dropbtn">Select Course</button>
+        <div class="dropdown-content">
+            <a href="#">BICT111</a>
+            <a href="#">BICT121</a>
+            <a href="#">BICT131</a>
+            <a href="#">BICT141</a>
+            <a href="#">MATH111</a>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- Image Section -->
+<div class="image-box">
+  <div>
+      <img src="media/Pictures/Modules.png" alt="Modules">
+      <label>Modules</label>
+      
+  </div>
+  <div>
+      <img src="media/Pictures/Tests.png" alt="Tests">
+      <label>Tests</label>
+  </div>
+  <div>
+      <img src="media/Pictures/ChatRoom.png" alt="Chatroom">
+      <label>ChatRoom</label>
+  </div>
+</div>
+    
+
+      
+</section>
+         
+    
+    <div>
+        <h3>FAQs</h3>
+
+    </div>
+
+
+</div>
+
+<!-- FAQ Section div -->
+<div class="faq-section">
+  <h3>Frequently Asked Questions</h3>
+  <!-- 1st FAQ-->
+  <div class="faq-item">
+    <input type="checkbox" id="faq1">
+    <label for="faq1" class="faq-question">
+      How can to access course material?
+      <span class="arrow"></span>
+    </label>
+    <div class="faq-answer">
+      <p>To access course material on eScript, you simply need to log in your account and navigate to "Course Material" tap. here you will find structured tutorials and other resources.</p>
+    </div>
+  </div>
+  <!-- 2nd FAQ-->
+  <div class="faq-item">
+    <input type="checkbox" id="faq2">
+    <label for="faq2" class="faq-question">
+      What programming languages to focus on?
+      <span class="arrow"></span>
+    </label>
+    <div class="faq-answer">
+      <p>For BICT first year programs, Python and Java the main languages to focus on.</p>
+    </div>
+  </div>
+
+
+</div>
+
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <!--footer-->
+    <footer>
+
+      <div>
+          <P>eScrip@copyright2025</P>
+      </div>
+      
+      <section>
+      
+      <div class=" footerContent ">
+          <p>Staff</p>
+          <ul>
+              <li><a href=" #educators"></a> Educators</li>
+              <li><a href=" #educators"></a> Developers</li>
+              <li><a href=" #educators"></a> Open vacancies</li>
+          </ul>
+      </div>
+      
+      
+          <div class=" footerContent ">
+              <p>Study materials</p>
+              <ul>
+                  <li><a href=" #educators"></a> Modules</li>
+                  <li><a href=" #educators"></a> Test & Exams</li>
+                  <li><a href=" #educators"></a> Tutorials</li>
+              </ul>
+          </div>
+          
+          <div class=" footerContent ">
+              <p>Community</p>
+              <ul>
+                  <li><a href=" #educators"></a> chatroom</li>
+                  <li><a href=" #educators"></a> Consultants</li>
+              </ul>
+          </div>
+      
+      </div>
+      
+      
+      </section>
+      
+      </footer>
+ 
+    
+</body>
+</html>

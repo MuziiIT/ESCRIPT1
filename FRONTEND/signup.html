@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGNUP</title>
+    
+    <style>
+
+        /* General reset for margin */
+html {
+    margin: 0;
+    font-family: 'Arial', sans-serif; /* Set global font for consistency */
+}
+
+/* Section (Container for form) */
+section {
+    width: 40%;
+    height: auto;
+    background-color: rgb(6, 6, 40);
+    border-radius: 15px; /* Softer rounded corners */
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    padding: 40px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Enhanced shadow for modern feel */
+    text-align: center;
+    color: aliceblue;
+}
+
+/* Header inside the section */
+h1 {
+    font-size: 32px;
+    color: aliceblue;
+    margin-bottom: 30px;
+    font-family: 'Arial', sans-serif; /* Consistent font for header */
+}
+
+/* Form Styling */
+form {
+    width: 100%;
+}
+
+/* Label Styling */
+label {
+    color: aliceblue;
+    font-size: 16px;
+    text-align: left;
+    display: block;
+    margin-bottom: 8px;
+    font-family: 'Arial', sans-serif; /* Modern font for labels */
+}
+
+/* Input Fields */
+input {
+    border-radius: 5px; /* Slightly more rounded corners for inputs */
+    height: 40px;
+    width: 100%;
+    padding: 0 15px;
+    font-size: 16px;
+    background-color: #f4f4f4; /* Light background for input fields */
+    border: 1px solid #ccc; /* Light border for inputs */
+    margin-bottom: 20px;
+    box-sizing: border-box; /* Prevents overflow */
+    transition: all 0.3s ease; /* Smooth transition for focus effect */
+}
+
+input:focus {
+    outline: none; /* Remove default focus outline */
+    border-color: #007bff; /* Change border color on focus */
+    background-color: #e9f4ff; /* Light blue background on focus */
+}
+
+/* Button Styling */
+form button {
+    width: 100%;
+    height: 45px;
+    background-color: #007bff; /* Blue background color */
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px; /* Rounded corners for button */
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Hover effect */
+}
+
+form button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarges the button on hover */
+}
+
+form button:active {
+    transform: scale(1); /* Shrinks back to original size when clicked */
+}
+
+/* Anchor inside the button */
+form button a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Link to other pages (e.g., "Already have an account?" link) */
+form .link {
+    display: block;
+    margin-top: 15px;
+    color: #007bff;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+form .link:hover {
+    color: #0056b3; /* Change color on hover */
+}
+
+
+    </style>
+</head>
+
+<body>
+    <body>
+
+        <section>
+            <h1>CREATE AN ACCOUNT</h1>
+            <form onsubmit="handleSignup(event)">
+                <label for="username">NAME</label>
+                <input type="text" id="username" placeholder="Enter your name">
+    
+                <label for="surname">SURNAME</label>
+                <input type="text" id="surname" placeholder="Enter your surname">
+    
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your email..">
+    
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password">
+    
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password">
+    
+                <button type="submit">Sign Up</button>
+            </form>
+        </section>
+    
+    </body>
+    
+    <script>
+        async function handleSignup(event) {
+            event.preventDefault();
+            
+            const username = document.getElementById("username").value;
+            const surname = document.getElementById("surname").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+    
+            // Validate password and confirm password
+            if (password !== confirmPassword) {
+                alert("Passwords do not match");
+                return;
+            }
+    
+            const data = { username, surname, email, password };
+    
+            try {
+                const response = await fetch("http://127.0.0.1:5000/register", {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+    
+                if (response.ok) {
+                    const results = await response.json();
+                    alert("Registration successful");
+                    // Redirect to login page or home page
+                    window.location.href = "login.html";
+                } else {
+                    const error = await response.json();
+                    alert(`Error: ${error.message || 'Something went wrong'}`);
+                }
+            } catch (error) {
+                alert(`Error: ${error.message}`);
+            }
+        }
+    </script>
+    
+</body>
+
+</html>

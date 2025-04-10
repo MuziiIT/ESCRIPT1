@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    
+    <style>
+
+
+
+      /* Section (Login Box) */
+section {
+    width: 40%;
+    height: auto;
+    background-color: rgb(6, 6, 40);
+    border-radius: 15px; /* Softer rounded corners */
+    margin: 100px auto; /* Center the section and add margin from top */
+    padding: 40px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Improved shadow for a modern look */
+    text-align: center; /* Center all text inside */
+    color: aliceblue;
+}
+
+/* Header inside section */
+h1 {
+    font-size: 30px;
+    color: aliceblue;
+    margin-bottom: 20px; /* Added space below the header */
+    font-family: 'Arial', sans-serif; /* Modern font */
+}
+
+/* Form container */
+form {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Labels */
+label {
+    color: aliceblue;
+    font-size: 16px;
+    text-align: left;
+    display: block;
+    margin-bottom: 8px;
+    font-family: 'Arial', sans-serif; /* Clean and readable font */
+}
+
+/* Input fields */
+input {
+    border-radius: 5px; /* Slightly larger radius for input fields */
+    height: 40px;
+    width: 100%;
+    padding: 0 15px;
+    font-size: 16px;
+    background-color: #f4f4f4; /* Light background for input fields */
+    border: 1px solid #ccc; /* Light border */
+    box-sizing: border-box; /* Prevents input fields from overflowing */
+    transition: all 0.3s ease; /* Smooth transition for focus effect */
+}
+
+input:focus {
+    outline: none; /* Removes default focus outline */
+    border-color: #007bff; /* Highlight input field when focused */
+    background-color: #e9f4ff; /* Light blue background on focus */
+}
+
+/* Button */
+form button {
+    width: 100%;
+    height: 45px;
+    background-color: #007bff; /* Blue color for the button */
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px; /* Rounded button */
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Button hover effects */
+}
+
+form button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+form button:active {
+    transform: scale(1); /* Button shrinks back to normal on click */
+}
+
+/* Button link styling */
+form button a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Optional: Add a "forgot password" or "sign up" link */
+form .link {
+    display: block;
+    margin-top: 15px;
+    color: #007bff;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+form .link:hover {
+    color: #0056b3;
+}
+
+        body{
+            background-color: rgb(183, 179, 179) ;
+        }
+
+
+
+
+
+
+    </style>
+</head>
+
+
+<body>
+
+    <section>
+        <h1>LOGIN PAGE</h1>
+        <form onsubmit="handleLogin(event)">
+            <label for="name"> Email</label>
+            <input type="email" id="email" name="email" placeholder="Your email..">
+            <label for="password" >password</label>
+            <input type="password" id="password"  name="password" placeholder="password">
+            <button type="submit">LOG IN</button>
+        </form>
+        
+    </section>
+
+  
+    
+
+
+
+</body>
+
+<script>
+    async function handleLogin(event) {
+    event.preventDefault(); // Prevent form submission
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    // Validate email and password
+    if (!email || !password) {
+        alert("Please enter both email and password.");
+        return;
+    }
+
+    const data = { email, password };
+
+    try {
+        // Send a POST request to the Flask backend to verify user
+        const response = await fetch("http://127.0.0.1:5000/verify_password", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+            const result = await response.json();
+            alert(result.message || "Login successful!");
+            // Redirect to the dashboard or home page
+            window.location.href = "Welcome.html";
+        } else {
+            const error = await response.json();
+            alert(error.error || "Login failed. Please try again.");
+        }
+    } catch (error) {
+        alert(`Error: ${error.message}`);
+    }
+}
+</script>
+    
+
+</html>

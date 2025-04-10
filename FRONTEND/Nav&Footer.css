@@ -1,0 +1,130 @@
+/* Header Styling */
+header {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.logo {
+    display: inline-block;
+    width: 200px;
+    margin-right: 50px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header div ul li {
+    float: left;
+    margin-right: 30px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  
+    transition: transform 0.3s ease; /* Smooth transition on hover */
+}
+
+header div ul li:hover {
+    transform: scale(1.1); /* Subtle hover effect to enlarge the list item */
+}
+
+header div ul li a {
+    color: black;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    margin-left: 6px;
+    
+}
+
+
+
+
+header div ul li a:hover {
+    color: #007bff; /* Color change on hover */
+}
+
+/* Button Styling */
+button {
+    padding: 12px 25px;
+    margin-right: 10px;
+    color: white;
+    background-color: black;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+    border: none;
+}
+
+
+button:hover {
+    background-color: #007bff; /* Button color change on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Body Styling */
+body {
+    margin-left: 35px;
+    font-family: 'Inter', sans-serif;
+    background-color: #f9f9f9; /* Light background color for body */
+    color: #333; /* Dark text for better readability */
+}
+
+/* Footer Styling */
+footer {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}
+
+footer .footerContent {
+    margin-right: 35px;
+}
+
+footer section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer section div ul {
+    padding-left: 0;
+}
+
+footer section div ul li {
+    margin-bottom: 15px;
+    color: rgb(115, 115, 212);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+footer section div ul li:hover {
+    color: white; /* White color on hover */
+}
+
+footer section div p {
+    margin-left: 35px;
+    color: #bbb; /* Lighter color for paragraph */
+    font-size: 14px;
+}
