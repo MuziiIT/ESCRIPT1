@@ -1,19 +1,278 @@
-<!DOCTYPE html>
+<!<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us Page</title>
-    <link rel="stylesheet" href="Nav&Footer.css">
-</head>
+    <title>About eScript</title>
+    <style>
 
+
+*
+        /* Styling for layout */
+        .total {
+            display: flex;
+            flex-direction: row-reverse; /* Places image on the right */
+            align-items: center; /* Align items vertically */
+            gap: 20px; 
+               background-color: #d1d1d1;
+            border-radius: 5px;
+        }
+
+        .sentences {
+            flex: 1;
+            max-width: 100%;
+        }
+
+        .image img {
+            width: 100%; 
+            height: auto; 
+            max-width: 900px; 
+            border-radius: 5px;
+            border: 0cap;
+           
+        }
+
+    
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 35px;
+        }
+
+        h1 {
+            margin-top: 40px;
+        }
+
+        hr {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px; 
+            justify-content: center;
+            text-align: center;
+        }
+
+        
+        .image-grid figure {
+            margin: 0;
+            padding: 0;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        
+        .image-grid figcaption {
+            font-size: 16px;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+
+        footer{
+            margin-top: 80px;
+            display: flex;
+           width:100%;
+        }
+
+.footerContent li{
+           margin-right:35px;
+           cursor: pointer;
+           list-style-type: none;
+           text-decoration: none;
+        }
+
+        section{
+            display: flex;
+            margin-left:50%;
+        }
+
+        section div ul li {
+            margin-bottom: 15px;
+            color: rgb(115, 115, 212);
+        }
+
+        section div p{
+            margin-left:35px;
+        }
+
+        .administrators{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+        }
+
+        .testimonial {
+            background-color: #d1d1d1;
+            border-radius: 10px;
+            padding: 20px;
+            
+            font-family: Arial, sans-serif;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .quote {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile img {
+            width: auto;
+            height: 100px;
+            border-radius: 10%;
+            margin-right: 10px;
+            gap: 5px;
+        }
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+        }
+        .name {
+            font-weight: bold;
+        }
+        .designation {
+            color: gray;
+            font-size: 18px;
+        }
+
+
+
+
+        .info-bar {
+            background-color: #d1d1d1;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: Arial, sans-serif;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+            height: 55px;
+        }
+        .info-text {
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        .info-text::before {
+            content: "ℹ";
+            font-size: 24px;
+            margin-right: 8px;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        button a{
+            color: white;
+            cursor: pointer;
+        }
+        .email-btn {
+            background-color: #0a0a3d;
+            color: white;
+            cursor: pointer;
+        }
+        .about-btn {
+            background-color: #e0e0e0;
+            color: black;
+        cursor: pointer; }
+
+
+        .logo{
+            display: inline-block;
+            width: 200px;
+            margin-right: 100px;
+        }
+
+      
+
+
+        .navigation ul{
+            display:flex;
+            list-style: none;
+            gap: 60px;
+        
+          
+        }
+        header div ul li{
+            float: left;
+            margin-right: 10px;
+            padding-top: 10px;
+            gap: 30px;
+            
+            
+        }
+
+       header div ul li a{
+            color: black;
+            font-size: 22px;
+            font-family: inter;
+            text-decoration: solid;
+            gap: 400px;
+           
+
+        }
+
+        button{
+            margin-right: 70px;
+            margin-left: 70px;
+            margin-bottom: 5px;
+            padding: 20px;
+            color: white;
+            background-color: black;
+            border-radius: 13%;
+        }
+
+
+
+        body{
+            margin-left: 35px;
+        }
+
+
+
+
+
+        img{
+            width: 100%;
+            
+        }
+
+
+
+        
+
+
+
+    </style>
+</head>
 <body>
-    <header>
-          <!-- NAVIGATION PANEL-->
+
     <header>
         <nav style="display: flex;">
             <div >
-                <img class="logo" src="images/Log.jpg" alt="logo">
+                <img class="logo" src="eScript_logo.jpg" alt="logo">
 
             </div>
 
@@ -22,33 +281,205 @@
 
             <div style="display: flex;
                         background-color: rgb(208, 204, 204);
-                         border-radius: 20px;
-                         flex-wrap: none;
-                         min-width: 600px;
-                         max-width: 1000px;">
+                         border-radius: 10px;
+                         min-width: 80%;
+                         max-width: 50%;">
 
-                    <div>
+                    <div class = "navigation">
                         <ul >
-                            <li><a href="index.html"> Home</a></li>
-                            <li><a href="about.html"> About Us</a></li>
-                            <li><a href="study.html"> Study with Us</a></li>
-                            <li><a href="material.html"> Course Material</a></li>
-                            <li><a href="contact.html"> Contact Us</a></li>
+                            <li><a href="FRONTEND/index.html"> Home Page</a></li>
+                            <li><a href="FRONTEND/about.html"> About Us</a></li>
+                            <li><a href="FRONTEND/study.html"> Study with Us</a></li>
+                            <li><a href="FRONTEND/material.html"> Course Material</a></li>
+                            <li><a href="FRONTEND/contact.html"> Contact Us</a></li>
                         </ul>
 
-                    </div>
-                    
-                    <div style=" padding-top: 18px;"> 
+                    </div> 
+
+
+
+                    <div style=" padding-top: 18px;
+                            display:flex;
+                            "> 
+
+
                         <button type="button"> <a href="login.html"> LOG IN</a> </button>
                         <button type="button"> <a href="signup.html"> SIGN UP</a></button>
 
                     </div>
-    
             </div>
         </nav>
-    </header>
+</header>
 
-    <h1>coming soon</h1>
-    
+
+
+
+
+    <h1><b>About | eScript</b></h1>
+    <hr>
+
+    <div class="total">
+        <div class="sentences">
+            <pre style = "font: 500;font-family: sans-serif;font-size:20px;">
+                Welcome to eScrypt, your ultimate e-learning platform designed specifically for first-year
+                BICT students at the University of Mpumalanga.
+                We are committed to making complex course content easy to understand through well-structured learning materials.
+                Our platform offers detailed tutorials, interactive test and exam demos, and comprehensive course resources to 
+                help students grasp key concepts effortlessly.
+                In addition, we provide one-on-one discussions with experienced educators to offer
+                personalized guidance and support.
+                Our student chat room fosters collaboration, allowing students
+                to share knowledge, ask questions, and engage with peers in a supportive community.
+                Whether you need help with coursework, exam preparation, or concept reinforcement, 
+                eScrypt is here to ensure your academic success.
+                With user-friendly navigation and a flexible learning experience, we aim to simplify
+                your journey through the first year of BICT studies.
+                Join us today and take the stress out of learning!
+            </pre>
+            
+        </div>
+        <div class="image">
+            <img src="pexels-yankrukov-8197531.jpg" alt="Stress-Free Learning">
+        </div>
+        
+    </div>
+
+
+  
 </body>
+
+
+<h2 style="font-family: sans-serif; margin: 20px; padding: 0px;">
+    Our Administrators
+</h2>
+
+<div class="administrators">
+
+            
+<div class="testimonial">
+
+    <div class="profile">
+        <img src=" pexels-bertellifotografia-573299.jpg " alt="Jesus Christ">
+        <div class="profile-info">
+            <span class="name">Jesus Christ</span>
+            <span class="designation">Ump Student </span>
+        </div>
+    </div>
+  
+</div>
+
+
+<div class="testimonial"> 
+
+    
+    <div class="profile">
+        <img src="pexels-danxavier-1212984.jpg " alt="Lindelani Masuku">
+        <div class="profile-info">
+            <span class="name"> Lindelani Masuku</span>
+            <span class="designation">Ump Student</span>
+        </div>
+    </div>
+  
+</div>
+
+
+
+<div class="testimonial">
+
+    
+    <div class="profile">
+        <img src=" pexels-justin-shaifer-501272-1222271.jpg" alt="Muzi Mhlanga">
+        <div class="profile-info">
+            <span class="name">Muzi Mhlanga</span>
+            <span class="designation">Ump Student</span>
+        </div>
+    </div>
+  
+</div>
+
+
+<div class="testimonial">
+
+    
+    <div class="profile">
+        <img src=" pexels-shvets-production-8933718.jpg" alt="Jayden Manca">
+        <div class="profile-info">
+            <span class="name">Jayden Manca</span>
+            <span class="designation">Ump Student</span>
+        </div>
+    </div>
+  
+</div>
+
+
+</div>
+
+<!--Information Tab-->
+
+<div class="info-bar">
+<span class="info-text">Information</span>
+<div class="buttons">
+<button class="button email-btn">Email Us</button>
+<button class="button about-btn">About Us</button>
+</div>
+</div>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+
+    <div>
+        <P>eScrip@copyright2025</P>
+    </div>
+
+
+    <section>
+
+    <div class=" footerContent ">
+        <p>Staff</p>
+        <ul>
+            <li><a href=" #educators"></a> Educators</li>
+            <li><a href=" #educators"></a> Developers</li>
+            <li><a href=" #educators"></a> Open vacancies</li>
+        </ul>
+    </div>
+
+
+        <div class=" footerContent ">
+            <p>Study materials</p>
+            <ul>
+                <li><a href=" #educators"></a> Modules</li>
+                <li><a href=" #educators"></a> Test & Exams</li>
+                <li><a href=" #educators"></a> Tutorials</li>
+            </ul>
+        </div>
+        <div class=" footerContent ">
+            <p>Community</p>
+            <ul>
+                <li><a href=" #educators"></a> chatroom</li>
+                <li><a href=" #educators"></a> Consultants</li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    </section>
+</footer>
+
+
 </html>
